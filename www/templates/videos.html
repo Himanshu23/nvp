@@ -1,0 +1,53 @@
+<style type="text/css">
+    [nav-view-transition="ios"] [nav-view] {
+  box-shadow: none !important; }
+  .bar .bar-header{
+    border:none!important;
+    z-index: 0!important;
+  }
+  .nav-bar-container{
+    display:block !important;
+  }
+  </style>
+<ion-view  style = " background: url(img/background_choose.png) no-repeat center center fixed">
+<ion-nav-bar>
+<!-- <ion-nav-back-button>Home</ion-nav-back-button> -->
+  <ion-nav-back-button class="button-clear" ng-click="goBackState()">
+  <!--   <i class="ion-arrow-left-c"></i>  -->Home
+  </ion-nav-back-button>
+</ion-nav-bar>
+
+  <ion-content>
+   <div class="col text-right paddin-top-5 padding-right-5">
+   <a  ng-click="openLink()" ><img src="img/group_2.png" class="" height="50" width = "60" class = "img-responsive"></a>
+   </div>
+   <div class= "row" style= "margin-top:-55px">
+   		<div class = "col text-center">
+    		<img src="img/nvplogo.png" class="col-centered"  class = "img-responsive">
+   		</div>
+   </div>
+
+   <div class= "row" ng-repeat="val in videoData track by $index">
+
+     <div class="row" ng-if="$even" style="position: relative;">
+         <div class="col text-center" style="position: relative;">
+          <!-- <img class = "category_thumb" ng-src="{{videoData[$index].image}}"  ng-click = "onPlay('{{videoData[$index].link}}')" > -->
+          <img class = "category_thumb" ng-src="{{videoData[$index].image}}"  ui-sref = "play({video:$index})" >
+        </div>
+
+         <div class="col text-center" style="position: relative;">
+            <img class = "category_thumb" ng-src="{{videoData[$index+1].image}}"  ui-sref = "play({video:$index+1})" >
+       </div>
+     </div>
+ </div>
+
+ <div class= "row margin-top-10 margin-bottom-10">
+   <div class = "col">
+  <div class = "text-center font-15 padding-10 nvp_history_btn" ui-sref = "play({video:100})">NVP History
+  </div>
+   </div>
+
+</div>
+
+  </ion-content>
+</ion-view>

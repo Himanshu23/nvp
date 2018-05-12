@@ -1,0 +1,27 @@
+ <style type="text/css">
+    [nav-view-transition="ios"] [nav-view] {
+  box-shadow: none !important; }
+  .fullview_bottom_text{
+  	top:45px!important;
+  }
+  .bar .bar-header{
+    border:none!important;
+    z-index: 0!important;
+  }
+  </style>
+<ion-view  hide-nav-bar="true">
+<ion-nav-bar>
+  <ion-nav-back-button class="button-clear">
+    <i class="ion-arrow-left-c"></i> Back
+  </ion-nav-back-button>
+</ion-nav-bar>
+
+ <ion-content>
+  
+  {{video}}
+  <video controls width="640" height="264">
+     <source src="video" type='video/mp4' />
+</video>
+  </ion-content>
+</ion-view>
+

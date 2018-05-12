@@ -1,0 +1,93 @@
+ <style type="text/css">
+    [nav-view-transition="ios"] [nav-view] {
+  box-shadow: none !important; }
+  .bar .bar-header{
+    border:none!important;
+    z-index: 0!important;
+  }
+  </style>
+  <ion-view  style = " background: url(img/background_choose.png) no-repeat center center fixed">
+  <ion-nav-bar>
+  <ion-nav-back-button>Categories</ion-nav-back-button>
+  <!-- <ion-nav-back-button class="button-clear">
+    <i class="ion-arrow-left-c"></i> Back
+  </ion-nav-back-button> -->
+</ion-nav-bar>
+
+  <ion-content>
+   <div class="col text-right paddin-top-5 padding-right-5">
+  <a  ng-click="openLink()" ><img src="img/group_2.png" class="" height="55" width = "60" class = "img-responsive"></a>
+   <div class= "row" style= "margin-top:-50px">
+   		<div class = "col text-center">
+    		<img src="img/nvplogo.png" class="col-centered">
+   		</div>
+   </div>
+
+    <div class= "row">
+   	<div class = "col text-center">
+    	<img ng-src="{{catData.logo}}" width="80%" >
+   	</div>
+   </div>
+
+   <div class="slick-container">
+    <slick 
+           infinite=false
+           slides-to-show=3 
+           slides-to-scroll=3
+           init-onload=true,
+           data="poductData",
+          arrows= "false",
+          speed = "600"
+           
+           >
+      <div class="slick-item" ng-repeat="product in poductData">
+       <div class="profile-img ">
+         <img ng-src="{{poductData[$index].Product.small_image}}"  ui-sref = "view(({img: 
+         product.Product.image}))"> 
+           <div class = "bottom_text" >
+           
+<p>{{ poductData[$index].Product.name | limitTo: 30 }}{{poductData[$index].Product.name.length > 30 ? '...' : ''}}</p>
+
+           </div> 
+       </div>
+<!-- -->
+         </div>
+      </div>
+    </slick>
+  </div>
+
+  
+<div class= "row  blue-strip" ng-if ="designData">
+<div class = "col text-center">
+  <slick infinite=false slides-to-show=2  slides-to-scroll=2 init-onload=true, data="designData", arrows= "false", speed = "600">
+      <div class="slick-item" ng-repeat="des in designData track by $index">
+         <img ng-src="{{des.CategoryDesign.design}}" class="image-buttons" > 
+      </div>
+      
+    </slick>
+</div>
+ 
+ </div>
+
+ <div class= "row ">
+   <div class = "col text-center">
+    <img src="img/text_available_in.png" class="image-buttons pading-10" class = "img-responsive">
+   </div>
+ </div>
+ <div class= "row margin-top-30">
+ 
+ <div class= "margin-top-30" style = "height:auto;margin:0 auto;width:auto;display:flex;justify-content: center">
+   
+   <div ng-repeat="image in catData.color">
+      <div class="img-with-text" >
+      <div class="blue-text-head text-center margin-bottom-5"><p ng-bind = "image.name"></p></div>
+           <img src="{{image.image}}" border="0"  />
+      </div>
+   </div>
+
+</div>    
+ </div> 
+  </ion-content>
+</ion-view>
+
+ 

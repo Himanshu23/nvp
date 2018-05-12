@@ -1,0 +1,22 @@
+{
+  "name": "npvApp",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/getProductCategories",
+      "proxyUrl": "http://52.221.67.26/ionic/Api/getProductCategories"
+    },
+    {
+      "path": "/getProduct",
+      "proxyUrl": "http://52.221.67.26/ionic/Api/getProductCategories"
+    },
+    {
+      "path": "/check_trancation",
+      "proxyUrl": "http://api.hfa.mobi/iraq/checkTrx.php"
+    },
+    {
+      "path": "/freeTrial",
+      "proxyUrl": "http://api.hfa.mobi/iraq/freeTrial.php"
+    }
+  ]
+}

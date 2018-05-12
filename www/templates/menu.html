@@ -1,0 +1,63 @@
+    <ion-side-menus enable-menu-with-back-views="false" cache-view = "false">
+    <ion-side-menu-content>
+
+      <ion-nav-bar class="bar-stable">
+      
+
+        <ion-nav-buttons side="left">
+          <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+          </button>
+        </ion-nav-buttons>
+      </ion-nav-bar>
+
+        <ion-nav-view name="menuContent">
+        </ion-nav-view>
+
+    </ion-side-menu-content>
+
+    <ion-side-menu side="left">
+
+        <ion-content overflow-scroll="true" scroll="true" class="menu-outer">
+            
+
+              <ion-item ui-sref-active="active" class="text-center">
+              
+                     <div class="row">
+                        <div class="col text-center">
+                          <img src="img/rsz_nvplogo.png" class="col-centered" class = "img-responsive">
+                        </div>
+                    </div>
+                       
+              </ion-item>
+
+             
+        <div ng-repeat="group in groups" >
+          <ion-item class="item-icon-left item-complex" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+             
+               <div class="item-content" style="padding-left: 47px;">
+                  <i class="menu-icon icon ion-briefcase"></i> <h3 class="menu-text" style="padding-left: 8px;">Fence Styles </h3>
+                              <i class="icon marin-lr-8" style="
+                              right: 17px; left: inherit; font-size: 14px;float: right !important;" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
+              </div>
+          </ion-item>
+          <ion-item class="item-accordion"
+                    ng-repeat="item in group.items"
+                    ng-show="isGroupShown(group)" ng-click = "showJobListing(item)">
+               {{item}}
+          </ion-item>
+         </div>
+       <!--  <ion-item ui-sref-active="active" class="item-icon-left" ui-sref = "play({'video':100})">
+                    <i class="menu-icon icon ion-clipboard" ></i> <h3 class="menu-text">NVP History</h3>
+          </ion-item> -->
+          <ion-item ui-sref-active="active" class="item-icon-left" ui-sref="videos">
+                          <i class="menu-icon icon ion-person-stalker"></i> <h3 class="menu-text">About Us</h3>
+          </ion-item>
+          <ion-item ui-sref-active="active" class="item-icon-left" ui-sref = "contactus">
+                    <i class="menu-icon icon ion-email"></i> <h3 class="menu-text">Contact Us</h3>
+          </ion-item>
+         
+            
+           
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

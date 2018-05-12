@@ -1,0 +1,45 @@
+ <style type="text/css">
+    [nav-view-transition="ios"] [nav-view] {
+    box-shadow: none !important;
+  } 
+
+  </style>
+<ion-view  style = " background: url(img/background_choose.png) no-repeat center center fixed">
+ <ion-nav-bar class="bar-positive">
+ <ion-nav-back-button>Home</ion-nav-back-button>
+  <!-- <ion-nav-back-button class="button-clear">
+    <i class="ion-arrow-left-c"></i> Back
+  </ion-nav-back-button> -->
+</ion-nav-bar>
+  <ion-content>
+   <div class="col text-right paddin-top-5 padding-right-5">
+   <a  ng-click="openLink()" ><img src="img/group_2.png" class="" height="50" width = "60" class = "img-responsive"></a>
+   </div>
+   <div class= "row" style= "margin-top:-55px">
+   		<div class = "col text-center">
+    		<img src="img/nvplogo.png" class="col-centered"  class = "img-responsive">
+   		</div>
+   </div>
+    <div class= "row">
+   	<div class = "col text-center">
+    	<img src="img/text_choose_your_fen.png" width="100%">
+   	</div>
+   </div>
+    <div class= "row" ng-repeat="data in categoryData track by $index"">
+
+    <div class="row" ng-if="$even" style="position: relative;">
+        <div class="col  text-center" style="position: relative;">
+          <img class = "category_thumb" ng-src="{{categoryData[$index].ProductCategory.image}}" ui-sref = "chooseFence({catId: categoryData[$index].ProductCategory.id})">   
+      
+     </div>
+        <div class="col text-center" style="position: relative;"> 
+        <img class = "category_thumb" ng-src="{{categoryData[$index+1].ProductCategory.image}}" ui-sref = "chooseFence({catId: categoryData[$index+1].ProductCategory.id})">
+      </div>
+   
+    </div>
+</div>
+  
+  </ion-content>
+</ion-view>
+
+  
